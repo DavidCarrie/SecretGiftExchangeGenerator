@@ -36,7 +36,7 @@ File Formats: <br />
         ...
 
     Note that these invalid assignments are one directional. To define a pairing
-    where neither participant can gift to eachother, make 2 entries.
+    where neither participant can gift to eachother make 2 entries.
    
     For example:
         ...
@@ -58,13 +58,13 @@ recipients as the first giftor to begin assignments.
 That recipient is removed from the giftors viable list.
 4. The giftor and its viable recipient list are pushed onto stacks, needed in
 case backtracking is required.
-5. A new giftor is selected by: 
+5. A new giftor is selected by: <br />
 If the recipient of the last gift has already given a gift, then a giftor is 
-selected at random from the remaining pool. 
+selected at random from the remaining pool. <br />
 Otherwise the recipient is selected as the next giftor.
 6. 3-5 are repeated until all participants have been assigned a giftor resulting
-in a valid solution and jump (9), or the current giftor runs out viable 
-recipients. 
+in a valid solution and algorithm jumps to (9), or the current giftor runs out 
+viable recipients. 
 7. If the current giftor has runs out of viable recipients, the previous giftor
 and their untried recipients are popped from the stack and a new permutation is
 built by jumping back to 3.

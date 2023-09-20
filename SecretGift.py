@@ -36,40 +36,37 @@ class SecretGift:
             self.invalid = self.getInvalidAssignments(invalidList)
         else:
             self.invalid = None
+        # Dictionary to store assignments
+        self.assignments = {}
         
         
-    def generateGiftExchange(self) -> None:
+    def generateGiftExchange(self) -> bool:
         """
         Attempts to generate valid scecret gift exchange assignments. Currently
         uses the GraphApproach.
+
+        Returns
+        -------
+        res: bool
+            True if a solution was found, false otherwise
         """
         # Create required class for solution and generate assignments
         seGift = GraphApproach.GraphApproach(self.participants, self.invalid)
+        self.assignments = seGift.assignments
         res = seGift.generateExchange()
         
-        # If generation was succesful notify recipients, otherwise notify user
-        # of failure.
-        if res:
-            print("All gifts assigned")
-            self.notifyGiftors(seGift.assignments)
-        else:
-            print("No solution found")
+        return res
     
-    def notifyGiftors(self, assignments: dict) -> None:
+    def notifyGiftors(self,) -> None:
         """
         Notifies participants of their gift assignments
 
-        Parameters
-        ----------
-        assignments : dict{key: str, value: str}
-            Dictionary of gift assignments, key is giftors email and value is
-            recipient email.
         """    
-        for giftor in assignments:
+        for giftor in self.assignments:
             print("Notifying", giftor, \
                   "that they are assigned to get a gift for",\
-                    self.participants[assignments[giftor]][0],\
-                        self.participants[assignments[giftor]][1])
+                    self.participants[self.assignments[giftor]][0],\
+                        self.participants[self.assignments[giftor]][1])
             
 
 
@@ -154,8 +151,8 @@ class SecretGift:
 
 def main():
     """
-        Generates secret santa gift exchange assignments if possible from given
-        arguments.
+    Generates secret santa gift exchange assignments if possible from given
+    arguments.
 
     Arguments
     ---------
@@ -177,7 +174,15 @@ def main():
        sg = SecretGift(args[1], args[2])
        
     # Generate assignments
-    sg.generateGiftExchange()
+    outcome = sg.generateGiftExchange()
+
+    # If generation was succesful notify recipients, otherwise notify user
+    # of failure.   
+    if outcome:
+        print("All gifts assigned")
+        sg.notifyGiftors()
+    else:
+        print("No solution found")
 
 if __name__ == "__main__":
     main()
