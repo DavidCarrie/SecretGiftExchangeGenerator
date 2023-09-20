@@ -4,10 +4,10 @@ participant list in csv, and can accomodate an optional csv to predefine not
 allowed assignments.
 
 How to run:
-From a terminal located in the \SecretGiftExchangeGenerator directory run:
-Python SecretGift.py [participant.csv] [invalidAssignments.csv](optional)
+From a terminal located in the \SecretGiftExchangeGenerator directory run: \n
+Python SecretGift.py [participant.csv] [invalidAssignments.csv] -optional
 
-For example:
+For example: \n
 Python SecretGift.py test_data_small.csv test_invalidAssignments_small.csv
 
 File Formats:
@@ -23,7 +23,7 @@ File Formats:
         Mary,Wright,MaryWright@gmail.com
         .....
     
-[invalidAssignments.csv](optional): A comma-separated values file with no empty
+[invalidAssignments.csv]: An optional comma-separated values file with no empty
     lines. Format is Secret Giftor,Recipient and the first line of the file must
     reflect this as a header. Enter the emails of the giftor and recipient
     combination that is not allowed. 
