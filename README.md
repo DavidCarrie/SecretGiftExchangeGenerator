@@ -10,7 +10,7 @@ Python SecretGift.py [participant.csv] [invalidAssignments.csv] -optional
 For example: <br />
 Python SecretGift.py test_data_small.csv test_invalidAssignments_small.csv
 
-File Formats:
+File Formats: <br />
 [participant.csv]: A comma-separated values file with no empty lines. Format is
     First Name,Last Name,Email Address and the first line of the file must 
     reflect this as a header. 
