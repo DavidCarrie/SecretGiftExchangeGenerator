@@ -4,10 +4,10 @@ participant list in csv, and can accomodate an optional csv to predefine not
 allowed assignments.
 
 How to run:
-From a terminal located in the \SecretGiftExchangeGenerator directory run: \n
+From a terminal located in the \SecretGiftExchangeGenerator directory run:<br />
 Python SecretGift.py [participant.csv] [invalidAssignments.csv] -optional
 
-For example: \n
+For example: <br />
 Python SecretGift.py test_data_small.csv test_invalidAssignments_small.csv
 
 File Formats:
