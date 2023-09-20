@@ -3,7 +3,7 @@ Generates assignments for Secret Santa gift exchange. Requires Python 3, a
 participant list in csv, and can accomodate an optional csv to predefine not 
 allowed assignments.
 
-How to run:
+How to run: <br />
 From a terminal located in the \SecretGiftExchangeGenerator directory run:<br />
 Python SecretGift.py [participant.csv] [invalidAssignments.csv] -optional
 
@@ -24,9 +24,9 @@ File Formats: <br />
         .....
     
 [invalidAssignments.csv]: An optional comma-separated values file with no empty
-    lines. Format is Secret Giftor,Recipient and the first line of the file must
-    reflect this as a header. Enter the emails of the giftor and recipient
-    combination that is not allowed. 
+    lines. <br /> Format is Secret Giftor,Recipient and the first line of the 
+    file must reflect this as a header. Enter the emails of the giftor and 
+    recipient combination that is not allowed. 
 
     For example:
         Secret Giftor,Recipient
@@ -44,7 +44,7 @@ File Formats: <br />
         MichelleJohnson@gmail.com,JamesSmith@gmail.com
         ...
 
-Approach:
+Approach: <br />
 This script uses a graph based approach to assign giftors to recipients. Giftors
 are assigned recipients randomly from a list of viable recipients. If this
 assignment leads to an unsolvable situation, backtracking is used to try further
